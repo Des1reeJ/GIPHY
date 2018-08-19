@@ -1,0 +1,15 @@
+body {
+    background-image: url("https://data.whicdn.com/images/65804634/original.jpg"); 
+}
+.musicianname {
+    background-color: pink;
+    width: 75px;
+} 
+text {
+    color: black;
+    font: bold;
+}
+
+#gifs-appear-here {
+    color: whitesmoke;
+}
