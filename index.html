@@ -5,75 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><h1>90's GIPHY</h1></title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assetstwo/reset.css">
+    <link rel="stylesheet" href="assetstwo/style.css">
 </head>
 
 <body>
-    <button data-person="Aaliyah">Hot like Fire</button>
-    <button data-person="Missy Elliot">Misdemeanor</button>
-    <button data-person="Timbaland">Production is Life</button>
-    <button data-person="Ginuwine">Same Ol' G</button>
-    <button data-person="Notorious B.I.G">Big Poppa</button>
-    <button data-person="Lil' Kim">Queen Bee</button>
-    <button data-person="Monica">The First Night</button>
-    <button data-person="702">I Still Love You</button>
-    <button data-person="Tupac">California Love</button>
+    <title>
+        <h1>90's GIPHY</h1>
+    </title>
+    <button data-person="Aaliyah">Hot like Fire.</button>
+    <button data-person="Missy Elliot">Get your freak on.</button>
+    <button data-person="Timbaland">Production is Life.</button>
+    <button data-person="Usher">Nice and slow.</button>
+    <button data-person="Lil' Kim">Queen Bee.</button>
+    <button data-person="Monica">The First Night.</button>
+    <button data-person="702">Steelo.</button>
+    <button data-person="Tupac">California Love.</button>
+    <button data-person="Mariah Carey">Heartbreaker.</button>
     <button data-person="Foxy Brown">Foxxxxy.</button>
-    <button data-person="TLC">Crazy.Sexy.Cool</button>
-    <button data-person="SWV">Love Will Be Right Here</button>
-    <button data-person="Lauryn Hill">Everything is Everything</button>
-    <button data-person="Boyz II Men">One Sweet Day</button>
-    <button data-person="BabyFace">Whip Appeal</button>
+    <button data-person="TLC">Crazy.Sexy.Cool.</button>
+    <button data-person="Lauryn Hill">Everything is Everything.</button>
+    <button data-person="Boyz II Men">One Sweet Day.</button>
+    <button data-person="BabyFace">Whip Appeal.</button>
+    <button data-person="Digable Planets">I'm cool like that.</button>
+    <button data-person="Bell Biv DeVoe">Never trust.</button>
+    <button data-person="The Fugees">Ooh La La La.</button>
+    <button data-person="Destiny's Child">Bug a boo.</button>
+    <button data-person="En Vogue">Don't let go.</button>
+    <button data-person="Patti Labelle">New Attitude.</button>
+    <button data-person="New Edition">The Rain.</button>
+    <button data-person="Tribe Called Quest">Bonita Applebum.</button>
+    <button data-person="Snoop Dogg">Gin and Juice.</button>
+    <button data-person="Salt N' Pepa">Push it.</button>
+    <button data-person="Warren G">Regulate.</button>
+    <button data-person="Ice Cube">It was a good day.</button>
+    <button data-person="Mya">Case of the Ex.</button>
+    <button data-person="Guy">Let's Chill.</button>
+
+    <div class="musicianname">Add a 90's Musician
+
+    <form>
+      Musician's name:<br>
+      <input type="text" name="musicianname">
+      <br>
+      <button id="Submit">Submit</button>
+    </form>
+    </div>
+    
+
     <div id="gifs-appear-here">
     </div>
+    <!-- jQuery script tag -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        // Adding click event listen listener to all buttons
-        $("button").on("click", function () {
-            // Grabbing and storing the data-person property value from the button
-            var nineties = $(this).attr("data-person");
-
-            // Constructing a queryURL using the animal name
-            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-                nineties + "&api_key=dc6zaTOxFJmzC&limit=10";
-
-            // Performing an AJAX request with the queryURL
-            $.ajax({
-                    url: queryURL,
-                    method: "GET"
-                })
-                // After data comes back from the request
-                .then(function (response) {
-                    console.log(queryURL);
-
-                    console.log(response);
-                    // storing the data from the AJAX request in the results variable
-                    var results = response.data;
-
-                    // Looping through each result item
-                    for (var i = 0; i < results.length; i++) {
-
-                        // Creating and storing a div tag
-                        var ninetiesDiv = $("<div>");
-
-                        // Creating a paragraph tag with the result item's rating
-                        var p = $("<p>").text("Rating: " + results[i].rating);
-
-                        // Creating and storing an image tag
-                        var ninetiesImage = $("<img>");
-                        // Setting the src attribute of the image to a property pulled off the result item
-                        ninetiesImage.attr("src", results[i].images.fixed_height.url);
-
-                        // Appending the paragraph and image tag to the animalDiv
-                        ninetiesDiv.append(p);
-                        ninetiesDiv.append(animalImage);
-
-                        // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
-                        $("#gifs-appear-here").prepend(ninetiesDiv);
-                    }
-                });
-        });
-    </script>
+    
+    <script src="app.js"></script>
 
 
 
