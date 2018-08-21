@@ -51,9 +51,12 @@
      //Add a submit button
      $(document).ready(function () {
          $('.musicianname').on('click', "#Submit", function (event) {
-             alert ("something happens", "anyhing happens");
              event.preventDefault();
-             console.log("something");
+             alert("Great Choice!");
+             console.log(musicianame);
+
+
+
 
             // Add an input variable
             var ninentiesMusician = $("input").val().trim();
